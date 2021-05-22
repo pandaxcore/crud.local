@@ -1,25 +1,41 @@
 import logo from './logo.svg';
 import './App.css';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {Button} from 'react-bootstrap'
+import Header from './Header'
+import {BrowserRouter, Route} from 'react-router-dom'
+import AddComment from './AddComment'
+import UpdateComment from './UpdateComment'
+import Login from './Login'
+import Register from './Register'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <BrowserRouter>
+
+        <Header />
+        <h2>Comment Project</h2>
+
+        <Route path="/add">
+          <AddComment />
+        </Route>
+
+        <Route path="/update">
+          <UpdateComment />
+        </Route>
+
+        <Route path="/login">
+          <Login />
+        </Route>
+
+        <Route path="/register">
+          <Register />
+        </Route>
+
+      </BrowserRouter>
+
     </div>
   );
 }
