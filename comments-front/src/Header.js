@@ -1,7 +1,15 @@
-import {Navbar, Nav} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
+import {Link, useHistory} from 'react-router-dom'
 
 function Header() {
+    const history = useHistory();
+    let user = JSON.parse(localStorage.getItem('user-info'))
+    function logOut() {
+        localStorage.clear();
+        history.push('/register');
+
+    }
+
     return(
         <div>
             <Navbar bg="dark" variant="dark">
@@ -20,11 +28,15 @@ function Header() {
                         </>
                     }
                 </Nav>
-
-                {/* <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-info">Search</Button>
-                </Form> */}
+                {
+                localStorage.getItem('user-info') ?
+                <Nav>
+                    <NavDropdown title={user && user.name}>
+                        <NavDropdown.Item onClick={logOut}>Logout</NavDropdown.Item>
+                    </NavDropdown>
+                </Nav>
+                :null
+                }
             </Navbar>
         </div>
     )
