@@ -20,7 +20,7 @@ function Register() {
                 "Content-Type":'application/json',
                 "Accept":'application/json'
             }
-        })
+        });
 
         result = await result.json()
         console.warn('result', result)
@@ -46,7 +46,7 @@ function Register() {
             <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)} className="form-control" placeholder="email"/> <br />
             <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} className="form-control" placeholder="password"/> <br />
 
-            <button onClick={signUp} className="btn-btn-primary">Sign Up</button>
+            <button onClick={signUp} className="btn btn-primary">Sign Up</button>
         </div>
         </div>
     )
