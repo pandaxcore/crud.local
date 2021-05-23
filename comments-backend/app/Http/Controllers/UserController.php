@@ -14,8 +14,8 @@ class UserController extends Controller
     function register(Request $req){
 
         // return "this is an Register function";
-
-        return $req -> input();
+        // return $req -> input();
+        
         $user = new User;
         $user -> name = $req -> input('name');
         $user -> email = $req -> input('email');

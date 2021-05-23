@@ -22,7 +22,7 @@ class User extends Authenticatable
         'password',
     ];
 
-    public $timestamp = false;
+    // public $timestamp = false;
 
     /**
      * The attributes that should be hidden for arrays.
