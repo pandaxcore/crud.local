@@ -8,6 +8,7 @@ import AddComment from './AddComment'
 import UpdateComment from './UpdateComment'
 import Login from './Login'
 import Register from './Register'
+import Protected from './Protected'
 
 function App() {
   return (
@@ -15,15 +16,17 @@ function App() {
 
       <BrowserRouter>
 
-        <Header />
-        <h2>Comment Project</h2>
+        
+        {/* <h2>Comment Project</h2> */}
 
         <Route path="/add">
-          <AddComment />
+          <Protected Cmp={AddComment} />
+          {/* <AddComment /> */}
         </Route>
 
         <Route path="/update">
-          <UpdateComment />
+          <Protected Cmp={UpdateComment} />
+          {/* <UpdateComment /> */}
         </Route>
 
         <Route path="/login">

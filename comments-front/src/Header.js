@@ -7,10 +7,18 @@ function Header() {
             <Navbar bg="dark" variant="dark">
                 <Navbar.Brand href="#home">LVComment</Navbar.Brand>
                 <Nav className="mr-auto navbar-wrapper">
-                    <Link to="/add">Add Comment</Link>
-                    <Link to="/update">Update Comment</Link>
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
+                    {
+                        localStorage.getItem('user-info') ?
+                        <>
+                            <Link to="/add">Add Comment</Link>
+                            <Link to="/update">Update Comment</Link>
+                        </>
+                        :
+                        <>
+                            <Link to="/login">Login</Link>
+                            <Link to="/register">Register</Link>
+                        </>
+                    }
                 </Nav>
 
                 {/* <Form inline>
