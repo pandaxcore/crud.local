@@ -26,4 +26,14 @@ class PostController extends Controller
     function list(){
         return Post::all();
     }
+
+    function delete($post_id){
+        $result = Post::where('post_id', $post_id)->delete();
+        if($result){
+            return ["result" => "post has been deleted"];
+        } else {
+            return ["result" => "operation failed there is no post with such id"];
+        }
+        // return $id;
+    }
 }

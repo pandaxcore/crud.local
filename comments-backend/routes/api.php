@@ -26,3 +26,4 @@ Route::post('register', [UserController::class, 'register']);
 Route::post('login', [UserController::class, 'login']);
 Route::post('addpost', [PostController::class, 'addPost']);
 Route::get('list', [PostController::class, 'list']);
+Route::delete('delete/{post_id}', [PostController::class, 'delete']);
