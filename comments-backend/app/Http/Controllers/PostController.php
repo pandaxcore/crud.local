@@ -36,4 +36,11 @@ class PostController extends Controller
         }
         // return $id;
     }
+
+    function post($post_id){
+        // return $post_id;
+        return Post::find($post_id);
+        // return $post_id;
+        // return Post::all();
+    }
 }

@@ -3,40 +3,42 @@ import './App.css';
 
 import {Button} from 'react-bootstrap'
 import Header from './Header'
-import {BrowserRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import AddPost from './AddPost'
 import UpdateComment from './UpdateComment'
 import Login from './Login'
 import Register from './Register'
 import Protected from './Protected'
+import PostList from './PostList'
 
 function App() {
   return (
     <div className="App">
 
       <BrowserRouter>
+        <Switch>
 
-        
-        {/* <h2>Comment Project</h2> */}
+          <Route path="/add">
+            <Protected Cmp={AddPost} />
+          </Route>
 
-        <Route path="/add">
-          <Protected Cmp={AddPost} />
-          {/* <AddPost /> */}
-        </Route>
+          <Route path="/update">
+            <Protected Cmp={UpdateComment} />
+          </Route>
 
-        <Route path="/update">
-          <Protected Cmp={UpdateComment} />
-          {/* <UpdateComment /> */}
-        </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
 
-        <Route path="/login">
-          <Login />
-        </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
 
-        <Route path="/register">
-          <Register />
-        </Route>
-
+          <Route path="/">
+            <Protected Cmp={PostList} />
+          </Route>
+          
+        </Switch>
       </BrowserRouter>
 
     </div>

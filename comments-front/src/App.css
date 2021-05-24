@@ -41,3 +41,11 @@
 .navbar-wrapper a{
   padding-left: 30px;
 }
+
+.delete{
+  background-color: red;
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
