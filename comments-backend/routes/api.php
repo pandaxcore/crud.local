@@ -27,5 +27,3 @@ Route::post('login', [UserController::class, 'login']);
 Route::post('addpost', [PostController::class, 'addPost']);
 Route::get('list', [PostController::class, 'list']);
 Route::delete('delete/{post_id}', [PostController::class, 'delete']);
-// Route::get('post/{post_id}', [PostController::class, 'getPost']);
-Route::get('post/{post_id}', [PostController::class, 'post']);
